@@ -20,14 +20,20 @@
                 count++;
             } while (check_guess());
         }
-        function check_guess() {
+        function check_guess(){
             var idx = colors.indexOf(guess_input);
-            if (idx < 0)
-                alert("Sorry, I don’t recognize that color. \n\n Please try again.");
-            else if (idx > target)
+            if (idx < 0){
+                alert("Sorry, I don’t recognize that color. \n\n Please try again.");    
+            }
+            
+            else if (idx > target){
                 alert("Sorry, your guess is not correct! \n\n Hint: your color is alphabetically higher than mine.\n\n Please try again.");
-            else if (idx < target)
+
+            }
+            else if (idx < target){
                 alert("Sorry, your guess is not correct! \n\n Hint: your color is alphabetically lower than mine.\n\n PLease try again.");
+              
+            }
             else {
                 elem_body = document.getElementsByTagName("body")[0];
                 elem_body.style.background = colors[target];
